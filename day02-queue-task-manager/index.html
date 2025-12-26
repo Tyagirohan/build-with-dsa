@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2: Task Queue Manager | DSA Series</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Task Queue Manager</h1>
+            <p class="subtitle">Understanding <strong>Queues</strong> through Job Scheduling</p>
+        </header>
+
+        <div class="main-content">
+            <div class="control-panel">
+                <div class="add-task-section">
+                    <h3>➕ Add New Task</h3>
+                    <input type="text" id="taskInput" placeholder="Enter task name..." />
+                    <select id="taskType">
+                        <option value="email">📧 Email</option>
+                        <option value="report">📊 Report</option>
+                        <option value="backup">💾 Backup</option>
+                        <option value="deploy">🚀 Deploy</option>
+                        <option value="test">🧪 Test</option>
+                    </select>
+                    <button id="addTaskBtn" class="btn-primary">Add to Queue</button>
+                </div>
+
+                <div class="queue-controls">
+                    <button id="processBtn" class="btn-process" disabled>⚡ Process Next</button>
+                    <button id="processAllBtn" class="btn-process-all" disabled>🔄 Process All</button>
+                    <button id="clearBtn" class="btn-clear" disabled>🗑️ Clear Queue</button>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-label">In Queue</span>
+                        <span id="queueCount" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Processing</span>
+                        <span id="processingCount" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Completed</span>
+                        <span id="completedCount" class="stat-value">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="visualization-area">
+                <div class="queue-section">
+                    <h3>📚 Task Queue (FIFO)</h3>
+                    <div class="queue-direction">
+                        <span class="direction-label">← Front (Next to process)</span>
+                        <span class="direction-label">Back (Newly added) →</span>
+                    </div>
+                    <div id="taskQueue" class="task-queue">
+                        <div class="empty-message">
+                            <p>Queue is empty</p>
+                            <small>Add tasks above to get started</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="processing-section">
+                    <h3>⚙️ Processing</h3>
+                    <div id="processingArea" class="processing-area">
+                        <div class="empty-message">
+                            <p>No task processing</p>
+                            <small>Click "Process Next" to start</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="completed-section">
+                    <h3>✅ Completed Tasks</h3>
+                    <div id="completedList" class="completed-list">
+                        <div class="empty-message">
+                            <p>No completed tasks yet</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="explanation">
+            <h3>💡 How Queues Power Task Scheduling</h3>
+            <ul>
+                <li><strong>Enqueue:</strong> Add tasks to the back of the queue</li>
+                <li><strong>Dequeue:</strong> Remove and process tasks from the front</li>
+                <li><strong>FIFO Principle:</strong> First In, First Out - tasks processed in order they arrive</li>
+                <li><strong>Real-world uses:</strong> Print spoolers, CPU scheduling, breadth-first search, call centers</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>Day 2 of #DSAInPublic | <a href="https://github.com/Tyagirohan/build-with-dsa" target="_blank">View on GitHub</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

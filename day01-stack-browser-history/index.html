@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1: Browser History with Stacks | DSA Series</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌐 Browser History Navigator</h1>
+            <p class="subtitle">Understanding <strong>Stacks</strong> through Browser Navigation</p>
+        </header>
+
+        <div class="browser-window">
+            <div class="url-bar">
+                <input type="text" id="urlInput" placeholder="Enter URL (e.g., google.com)" />
+                <button id="visitBtn" class="btn-primary">Visit</button>
+            </div>
+
+            <div class="current-page">
+                <h2 id="currentUrl">Welcome Page</h2>
+                <p class="page-info">Start by entering a URL above</p>
+            </div>
+
+            <div class="website-viewer">
+                <div id="welcomeScreen" class="welcome-screen">
+                    <div class="welcome-content">
+                        <h2>🌐</h2>
+                        <p>Enter a URL above to start browsing</p>
+                        <small>Try: example.com, wikipedia.org, bing.com</small>
+                    </div>
+                </div>
+                <div id="loadingScreen" class="loading-screen" style="display: none;">
+                    <div class="loader"></div>
+                    <p>Loading website...</p>
+                </div>
+                <div id="blockedScreen" class="blocked-screen" style="display: none;">
+                    <div class="blocked-content">
+                        <h2>🔒</h2>
+                        <p><strong id="blockedSiteName"></strong> blocks iframe embedding</p>
+                        <small>Many sites (Google, YouTube, Facebook) block embedding for security</small>
+                        <button id="openExternalBtn" class="btn-primary">Open in New Tab →</button>
+                    </div>
+                </div>
+                <div id="frameContainer" style="display: none; position: relative; width: 100%; height: 100%;">
+                    <div class="frame-toolbar">
+                        <span id="frameUrl" class="frame-url"></span>
+                        <button id="openFrameExternal" class="btn-open-external" title="Open in new tab">↗</button>
+                    </div>
+                    <iframe id="websiteFrame"></iframe>
+                </div>
+            </div>
+
+            <div class="navigation-controls">
+                <button id="backBtn" class="btn-nav" disabled>
+                    ← Back
+                </button>
+                <button id="forwardBtn" class="btn-nav" disabled>
+                    Forward →
+                </button>
+            </div>
+        </div>
+
+        <div class="visualization">
+            <div class="stack-container">
+                <h3>📚 Back Stack</h3>
+                <div id="backStack" class="stack">
+                    <p class="empty-stack">Empty</p>
+                </div>
+            </div>
+
+            <div class="stack-container">
+                <h3>📚 Forward Stack</h3>
+                <div id="forwardStack" class="stack">
+                    <p class="empty-stack">Empty</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="explanation">
+            <h3>💡 How Stacks Power Browser History</h3>
+            <ul>
+                <li><strong>Visit a page:</strong> Current page pushed to back stack</li>
+                <li><strong>Back button:</strong> Pop from back stack, push current to forward stack</li>
+                <li><strong>Forward button:</strong> Pop from forward stack, push current to back stack</li>
+                <li><strong>Visit new page while forward stack exists:</strong> Forward stack cleared!</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>Day 1 of #DSAInPublic | <a href="https://github.com/Tyagirohan/build-with-dsa" target="_blank">View on GitHub</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
