@@ -118,7 +118,34 @@ Interactive family tree builder with visual hierarchy:
 
 ---
 
-### Day 6: Coming Soon... 🔜
+### Day 6: Social Network Visualizer 👥
+**Concept**: Graphs (Undirected Graph with Adjacency List)
+
+Interactive social network with graph algorithms:
+- ✅ Add people and create friend connections
+- ✅ Interactive canvas - drag nodes to rearrange
+- ✅ Find mutual friends (Set intersection)
+- ✅ Friend suggestions (friends of friends)
+- ✅ Degrees of separation (BFS shortest path)
+- ✅ Network statistics and visualization
+- ✅ Real-time graph rendering
+
+**[Live Demo](https://tyagirohan.github.io/build-with-dsa/day06-social-network/)** | **[Code](./day06-social-network/)**
+
+**Tech Stack**: Vanilla JavaScript, HTML5 Canvas, CSS3
+
+**Key Learnings**:
+- Graph data structure (adjacency list)
+- BFS (Breadth-First Search) algorithm
+- Shortest path finding
+- Graph traversal and visualization
+- Interactive canvas manipulation
+
+---
+
+## 🎉 **Series Complete!**
+
+All 6 projects showcase different DSA concepts through practical, interactive applications. Each project is fully functional, visually appealing, and ready to host!
 
 ---
 
@@ -150,9 +177,9 @@ cd build-with-dsa/day01-stack-browser-history
 - [x] **Stacks** - Day 1 (Browser History)
 - [x] **Queues** - Day 2 (Task Manager)
 - [x] **Hash Maps** - Day 3 (URL Shortener)
-- [x] **Linked Lists** - Day 4 (Music Playlist)
+- [x] **Linked Lists** - Day 4 (Music Playlist with real audio!)
 - [x] **Trees** - Day 5 (Family Tree)
-- [ ] **Graphs** - Day 6
+- [x] **Graphs** - Day 6 (Social Network) - **THE FINALE! 🎉**
 
 ## 🤝 Contributing
 

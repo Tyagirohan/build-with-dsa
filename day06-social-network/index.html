@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 6: Social Network Visualizer | DSA Series</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>👥 Social Network Visualizer</h1>
+            <p class="subtitle">Understanding <strong>Graphs</strong> through Social Connections</p>
+        </header>
+
+        <div class="main-content">
+            <div class="control-panel">
+                <div class="add-person-section">
+                    <h3>➕ Add Person</h3>
+                    <input type="text" id="personName" placeholder="Name (e.g., Alice)" />
+                    <input type="text" id="personBio" placeholder="Bio (e.g., Software Engineer)" />
+                    <button id="addPersonBtn" class="btn-primary">👤 Add Person</button>
+                </div>
+
+                <div class="connection-section">
+                    <h3>🔗 Create Connection</h3>
+                    <select id="person1Select">
+                        <option value="">Select person 1...</option>
+                    </select>
+                    <div class="connection-icon">↔️</div>
+                    <select id="person2Select">
+                        <option value="">Select person 2...</option>
+                    </select>
+                    <button id="connectBtn" class="btn-connect">🤝 Connect Friends</button>
+                </div>
+
+                <div class="find-section">
+                    <h3>🔍 Find & Explore</h3>
+                    
+                    <div class="find-item">
+                        <h4>Mutual Friends</h4>
+                        <select id="mutualPerson1">
+                            <option value="">Person 1...</option>
+                        </select>
+                        <select id="mutualPerson2">
+                            <option value="">Person 2...</option>
+                        </select>
+                        <button id="findMutualBtn" class="btn-find">🔍 Find Mutual</button>
+                        <div id="mutualResult" class="result-box"></div>
+                    </div>
+
+                    <div class="find-item">
+                        <h4>Friend Suggestions</h4>
+                        <select id="suggestForPerson">
+                            <option value="">Select person...</option>
+                        </select>
+                        <button id="suggestBtn" class="btn-find">💡 Get Suggestions</button>
+                        <div id="suggestResult" class="result-box"></div>
+                    </div>
+
+                    <div class="find-item">
+                        <h4>Degrees of Separation</h4>
+                        <select id="degreePerson1">
+                            <option value="">From...</option>
+                        </select>
+                        <select id="degreePerson2">
+                            <option value="">To...</option>
+                        </select>
+                        <button id="degreeBtn" class="btn-find">📏 Calculate</button>
+                        <div id="degreeResult" class="result-box"></div>
+                    </div>
+                </div>
+
+                <div class="stats-section">
+                    <h3>📊 Network Stats</h3>
+                    <div class="stat-item">
+                        <span class="stat-label">Total People:</span>
+                        <span id="totalPeople" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Total Connections:</span>
+                        <span id="totalConnections" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Average Friends:</span>
+                        <span id="avgFriends" class="stat-value">0</span>
+                    </div>
+                </div>
+
+                <div class="actions-section">
+                    <button id="clearNetworkBtn" class="btn-danger">🗑️ Clear Network</button>
+                </div>
+            </div>
+
+            <div class="graph-area">
+                <div class="graph-controls">
+                    <h3>🌐 Network Graph</h3>
+                    <div class="graph-buttons">
+                        <button id="resetLayoutBtn" class="graph-btn">🔄 Reset Layout</button>
+                        <button id="toggleLabelsBtn" class="graph-btn">🏷️ Toggle Labels</button>
+                    </div>
+                </div>
+                
+                <div id="graphContainer" class="graph-container">
+                    <canvas id="networkCanvas"></canvas>
+                    <div id="graphOverlay" class="graph-overlay">
+                        <div class="empty-graph">
+                            <div class="empty-icon">👥</div>
+                            <p>Your social network is empty</p>
+                            <small>Add people and create connections to see the graph!</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="people-list">
+                    <h4>👥 Network Members</h4>
+                    <div id="peopleList" class="people-list-container"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="explanation">
+            <h3>💡 How Graphs Power Social Networks</h3>
+            <ul>
+                <li><strong>Graph Structure:</strong> People are nodes, friendships are edges</li>
+                <li><strong>Undirected Graph:</strong> Friendship is bidirectional (A↔B)</li>
+                <li><strong>BFS:</strong> Find shortest path between people (degrees of separation)</li>
+                <li><strong>DFS:</strong> Explore entire friend network</li>
+                <li><strong>Connected Components:</strong> Find friend circles</li>
+                <li><strong>Real-world uses:</strong> Facebook, LinkedIn, Instagram, Twitter, recommendation systems</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>Day 6 of #DSAInPublic - The Finale! 🎉 | <a href="https://github.com/Tyagirohan/build-with-dsa" target="_blank">View on GitHub</a></p>
+        </footer>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    <script src="script.js"></script>
+</body>
+</html>
+
