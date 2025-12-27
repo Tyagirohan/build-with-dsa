@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 3: URL Shortener | DSA Series</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔗 URL Shortener</h1>
+            <p class="subtitle">Understanding <strong>Hash Maps</strong> through URL Shortening</p>
+        </header>
+
+        <div class="main-content">
+            <div class="shortener-panel">
+                <div class="input-section">
+                    <h3>✨ Shorten Your URL</h3>
+                    <input type="url" id="longUrl" placeholder="Enter your long URL (e.g., https://example.com/very/long/path)" />
+                    
+                    <div class="custom-code-section">
+                        <label class="toggle-label">
+                            <input type="checkbox" id="customToggle" />
+                            <span>Use custom short code</span>
+                        </label>
+                        <input type="text" id="customCode" placeholder="my-custom-code" disabled />
+                    </div>
+
+                    <button id="shortenBtn" class="btn-primary">🚀 Shorten URL</button>
+
+                    <div id="result" class="result-box" style="display: none;">
+                        <div class="result-header">
+                            <span class="result-label">✅ Shortened URL:</span>
+                            <button id="copyBtn" class="btn-copy" title="Copy to clipboard">📋 Copy</button>
+                        </div>
+                        <div class="short-url-display">
+                            <span id="shortUrl" class="short-url"></span>
+                        </div>
+                        <div class="original-url">
+                            <small>Original: <span id="originalUrl"></span></small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-section">
+                    <h3>📊 Statistics</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value" id="totalUrls">0</div>
+                            <div class="stat-label">URLs Shortened</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="totalClicks">0</div>
+                            <div class="stat-label">Total Clicks</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">O(1)</div>
+                            <div class="stat-label">Lookup Time</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="visualization-area">
+                <div class="hashmap-section">
+                    <h3>🗺️ Hash Map Visualization</h3>
+                    <div class="hashmap-info">
+                        <p>Each short code maps to a URL object with O(1) lookup time</p>
+                    </div>
+                    <div id="hashmapDisplay" class="hashmap-display">
+                        <div class="empty-message">
+                            <p>No URLs shortened yet</p>
+                            <small>Add your first URL above!</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="urls-list-section">
+                    <div class="section-header">
+                        <h3>📋 Your Shortened URLs</h3>
+                        <button id="clearAllBtn" class="btn-clear-all" disabled>🗑️ Clear All</button>
+                    </div>
+                    <div id="urlsList" class="urls-list">
+                        <div class="empty-message">
+                            <p>No URLs yet</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="explanation">
+            <h3>💡 How Hash Maps Power URL Shorteners</h3>
+            <ul>
+                <li><strong>Hash Function:</strong> Converts short code → unique hash index</li>
+                <li><strong>O(1) Insertion:</strong> Store URL mapping instantly</li>
+                <li><strong>O(1) Lookup:</strong> Retrieve original URL in constant time</li>
+                <li><strong>Key-Value Store:</strong> Short code (key) → URL data (value)</li>
+                <li><strong>Real-world uses:</strong> bit.ly, tinyurl.com, goo.gl use similar hash-based systems</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>Day 3 of #DSAInPublic | <a href="https://github.com/Tyagirohan/build-with-dsa" target="_blank">View on GitHub</a></p>
+        </footer>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    <script src="script.js"></script>
+</body>
+</html>
+

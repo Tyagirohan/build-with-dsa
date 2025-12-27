@@ -48,7 +48,29 @@ A visual job scheduler that demonstrates how queues manage tasks:
 
 ---
 
-### Day 3: Coming Soon... 🔜
+### Day 3: URL Shortener 🔗
+**Concept**: Hash Map (Hash Table / Dictionary)
+
+A fully functional URL shortener demonstrating O(1) hash map operations:
+- ✅ Auto-generate or custom short codes
+- ✅ O(1) lookup and insertion
+- ✅ Click tracking and statistics
+- ✅ Hash map visualization
+- ✅ URL management (view, visit, delete)
+
+**[Live Demo](https://tyagirohan.github.io/build-with-dsa/day03-url-shortener/)** | **[Code](./day03-url-shortener/)**
+
+**Tech Stack**: Vanilla JavaScript (ES6 Map), HTML5, CSS3
+
+**Key Learnings**:
+- Hash map operations: set(), get(), has(), delete()
+- O(1) average time complexity
+- Hash collision handling
+- How bit.ly and TinyURL work
+
+---
+
+### Day 4: Coming Soon... 🔜
 
 ---
 
@@ -79,7 +101,7 @@ cd build-with-dsa/day01-stack-browser-history
 
 - [x] **Stacks** - Day 1 (Browser History)
 - [x] **Queues** - Day 2 (Task Manager)
-- [ ] **Hash Maps** - Day 3
+- [x] **Hash Maps** - Day 3 (URL Shortener)
 - [ ] **Linked Lists** - Day 4
 - [ ] **Trees** - Day 5
 - [ ] **Graphs** - Day 6
