@@ -70,7 +70,30 @@ A fully functional URL shortener demonstrating O(1) hash map operations:
 
 ---
 
-### Day 4: Coming Soon... 🔜
+### Day 4: Music Playlist Manager 🎵
+**Concept**: Doubly Linked List
+
+Interactive music player demonstrating linked list operations:
+- ✅ Add songs at any position (append, prepend, insert after)
+- ✅ Player controls (play, pause, next, previous)
+- ✅ Visual linked list with prev/next pointers
+- ✅ O(1) insertion and deletion
+- ✅ Click any song to jump to it
+- ✅ Shuffle and manage playlist
+
+**[Live Demo](https://tyagirohan.github.io/build-with-dsa/day04-music-playlist/)** | **[Code](./day04-music-playlist/)**
+
+**Tech Stack**: Vanilla JavaScript, HTML5, CSS3 (Spotify theme)
+
+**Key Learnings**:
+- Doubly linked list node structure
+- O(1) bi-directional navigation
+- Dynamic insertion/deletion without shifting
+- How music players work
+
+---
+
+### Day 5: Coming Soon... 🔜
 
 ---
 
@@ -102,7 +125,7 @@ cd build-with-dsa/day01-stack-browser-history
 - [x] **Stacks** - Day 1 (Browser History)
 - [x] **Queues** - Day 2 (Task Manager)
 - [x] **Hash Maps** - Day 3 (URL Shortener)
-- [ ] **Linked Lists** - Day 4
+- [x] **Linked Lists** - Day 4 (Music Playlist)
 - [ ] **Trees** - Day 5
 - [ ] **Graphs** - Day 6
 

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 4: Music Playlist Manager | DSA Series</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎵 Music Playlist Manager</h1>
+            <p class="subtitle">Understanding <strong>Linked Lists</strong> through Music Playlists</p>
+        </header>
+
+        <div class="main-content">
+            <div class="control-panel">
+                <div class="add-song-section">
+                    <h3>🔍 Search & Add Songs</h3>
+                    <input type="text" id="searchQuery" placeholder="Search for songs (e.g., Bohemian Rhapsody Queen)" />
+                    <button id="searchBtn" class="btn-search">🔍 Search iTunes</button>
+                    
+                    <div id="searchResults" class="search-results" style="display: none;">
+                        <div class="search-results-header">
+                            <span>Search Results</span>
+                            <button id="closeSearchBtn" class="btn-close">✕</button>
+                        </div>
+                        <div id="searchResultsList" class="search-results-list"></div>
+                    </div>
+
+                    <div class="or-divider">
+                        <span>OR</span>
+                    </div>
+
+                    <h4>Manual Entry</h4>
+                    <input type="text" id="songName" placeholder="Song name" />
+                    <input type="text" id="artistName" placeholder="Artist name" />
+                    <select id="addPosition">
+                        <option value="end">Add to End</option>
+                        <option value="start">Add to Start</option>
+                        <option value="after">Add After Current</option>
+                    </select>
+                    <button id="addSongBtn" class="btn-primary">➕ Add Manually</button>
+                </div>
+
+                <div class="player-section">
+                    <h3>🎧 Now Playing</h3>
+                    <div id="nowPlaying" class="now-playing">
+                        <img id="albumArt" class="album-art" src="" alt="🎵" />
+                        <div class="song-info">
+                            <div class="song-title">No song playing</div>
+                            <div class="song-artist">Select a song to start</div>
+                        </div>
+                    </div>
+
+                    <div class="progress-container">
+                        <div class="progress-time">
+                            <span id="currentTime">0:00</span>
+                            <span id="duration">0:00</span>
+                        </div>
+                        <div class="progress-bar" id="progressBar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                    </div>
+
+                    <div class="player-controls">
+                        <button id="prevBtn" class="control-btn" disabled>⏮️</button>
+                        <button id="playBtn" class="control-btn control-btn-play" disabled>▶️</button>
+                        <button id="nextBtn" class="control-btn" disabled>⏭️</button>
+                    </div>
+
+                    <audio id="audioPlayer"></audio>
+
+                    <div class="player-actions">
+                        <button id="removeCurrentBtn" class="btn-action" disabled>🗑️ Remove Current</button>
+                        <button id="shuffleBtn" class="btn-action" disabled>🔀 Shuffle</button>
+                        <button id="clearPlaylistBtn" class="btn-action" disabled>❌ Clear All</button>
+                    </div>
+                </div>
+
+                <div class="stats-section">
+                    <h3>📊 Playlist Stats</h3>
+                    <div class="stat-item">
+                        <span class="stat-label">Total Songs:</span>
+                        <span id="totalSongs" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Current Position:</span>
+                        <span id="currentPosition" class="stat-value">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="visualization-area">
+                <div class="linked-list-section">
+                    <h3>🔗 Doubly Linked List Visualization</h3>
+                    <div class="linked-list-info">
+                        <p>Each node contains: <code>{ prev, song, artist, next }</code></p>
+                    </div>
+                    <div id="linkedListDisplay" class="linked-list-display">
+                        <div class="empty-message">
+                            <p>Linked list is empty</p>
+                            <small>Add songs to see the linked list structure</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="playlist-section">
+                    <div class="section-header">
+                        <h3>📋 Playlist View</h3>
+                        <span id="playlistCount" class="playlist-count">0 songs</span>
+                    </div>
+                    <div id="playlistDisplay" class="playlist-display">
+                        <div class="empty-message">
+                            <p>Your playlist is empty</p>
+                            <small>Add songs above to get started!</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="explanation">
+            <h3>💡 How Linked Lists Power Music Playlists</h3>
+            <ul>
+                <li><strong>Doubly Linked List:</strong> Each song points to next AND previous song</li>
+                <li><strong>Dynamic Size:</strong> Add/remove songs without reallocation (unlike arrays)</li>
+                <li><strong>O(1) Insert/Delete:</strong> At head or tail (with pointers)</li>
+                <li><strong>O(n) Access:</strong> Must traverse from head to find song at position n</li>
+                <li><strong>Real-world uses:</strong> Music players, undo/redo, browser history, image viewers</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>Day 4 of #DSAInPublic | <a href="https://github.com/Tyagirohan/build-with-dsa" target="_blank">View on GitHub</a></p>
+        </footer>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    <script src="script.js"></script>
+</body>
+</html>
+
