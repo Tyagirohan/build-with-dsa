@@ -93,7 +93,32 @@ Interactive music player demonstrating linked list operations:
 
 ---
 
-### Day 5: Coming Soon... 🔜
+### Day 5: Family Tree Explorer 👨‍👩‍👧‍👦
+**Concept**: Trees (N-ary Tree)
+
+Interactive family tree builder with visual hierarchy:
+- ✅ Add family members (root, parent, child, spouse)
+- ✅ Beautiful person cards with avatars
+- ✅ Visual tree with marriage lines 💕
+- ✅ Search by name
+- ✅ Find relationships between any 2 people
+- ✅ Tree statistics and zoom controls
+- ✅ Quick actions from person cards
+
+**[Live Demo](https://tyagirohan.github.io/build-with-dsa/day05-family-tree/)** | **[Code](./day05-family-tree/)**
+
+**Tech Stack**: Vanilla JavaScript, HTML5, CSS3 (Purple gradient theme)
+
+**Key Learnings**:
+- Tree data structure (N-ary tree)
+- Parent-child pointers
+- Recursive traversal
+- Height and depth calculations
+- Hierarchical data visualization
+
+---
+
+### Day 6: Coming Soon... 🔜
 
 ---
 
@@ -126,7 +151,7 @@ cd build-with-dsa/day01-stack-browser-history
 - [x] **Queues** - Day 2 (Task Manager)
 - [x] **Hash Maps** - Day 3 (URL Shortener)
 - [x] **Linked Lists** - Day 4 (Music Playlist)
-- [ ] **Trees** - Day 5
+- [x] **Trees** - Day 5 (Family Tree)
 - [ ] **Graphs** - Day 6
 
 ## 🤝 Contributing

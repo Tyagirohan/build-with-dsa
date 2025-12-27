@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 5: Family Tree Explorer | DSA Series</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>👨‍👩‍👧‍👦 Family Tree Explorer</h1>
+            <p class="subtitle">Understanding <strong>Trees</strong> through Family Relationships</p>
+        </header>
+
+        <div class="main-content">
+            <div class="control-panel">
+                <div class="add-member-section">
+                    <h3>➕ Add Family Member</h3>
+                    <input type="text" id="memberName" placeholder="Full name (e.g., John Smith)" />
+                    
+                    <select id="memberGender">
+                        <option value="male">👨 Male</option>
+                        <option value="female">👩 Female</option>
+                        <option value="other">🧑 Other</option>
+                    </select>
+
+                    <input type="number" id="memberBirthYear" placeholder="Birth year (e.g., 1990)" min="1900" max="2024" />
+
+                    <select id="relationshipType">
+                        <option value="root">Root (First person)</option>
+                        <option value="parent">Parent of</option>
+                        <option value="child">Child of</option>
+                        <option value="spouse">Spouse of</option>
+                    </select>
+
+                    <select id="relativeTo" disabled>
+                        <option value="">Select person...</option>
+                    </select>
+
+                    <button id="addMemberBtn" class="btn-primary">👤 Add Member</button>
+                </div>
+
+                <div class="search-section">
+                    <h3>🔍 Search & Find</h3>
+                    <input type="text" id="searchInput" placeholder="Search by name..." />
+                    <button id="searchBtn" class="btn-search">🔍 Search</button>
+                    
+                    <div class="relationship-finder">
+                        <h4>Find Relationship</h4>
+                        <select id="person1Select">
+                            <option value="">Person 1...</option>
+                        </select>
+                        <div class="relationship-icon">↔️</div>
+                        <select id="person2Select">
+                            <option value="">Person 2...</option>
+                        </select>
+                        <button id="findRelationBtn" class="btn-find">🔗 Find Relation</button>
+                        <div id="relationshipResult" class="relationship-result"></div>
+                    </div>
+                </div>
+
+                <div class="stats-section">
+                    <h3>📊 Tree Statistics</h3>
+                    <div class="stat-item">
+                        <span class="stat-label">Total Members:</span>
+                        <span id="totalMembers" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Generations:</span>
+                        <span id="totalGenerations" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Tree Height:</span>
+                        <span id="treeHeight" class="stat-value">0</span>
+                    </div>
+                </div>
+
+                <div class="tree-actions">
+                    <button id="expandAllBtn" class="btn-action">📂 Expand All</button>
+                    <button id="collapseAllBtn" class="btn-action">📁 Collapse All</button>
+                    <button id="clearTreeBtn" class="btn-action btn-danger">🗑️ Clear Tree</button>
+                </div>
+            </div>
+
+            <div class="tree-area">
+                <div class="tree-controls">
+                    <h3>🌳 Family Tree</h3>
+                    <div class="zoom-controls">
+                        <button id="zoomOutBtn" class="zoom-btn">➖</button>
+                        <span id="zoomLevel">100%</span>
+                        <button id="zoomInBtn" class="zoom-btn">➕</button>
+                        <button id="resetZoomBtn" class="zoom-btn">🔄</button>
+                    </div>
+                </div>
+                
+                <div id="treeContainer" class="tree-container">
+                    <div id="treeDisplay" class="tree-display">
+                        <div class="empty-tree">
+                            <div class="empty-icon">🌳</div>
+                            <p>Your family tree is empty</p>
+                            <small>Add your first family member to get started!</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="explanation">
+            <h3>💡 How Trees Power Family Trees</h3>
+            <ul>
+                <li><strong>Tree Structure:</strong> Each person is a node with parent-child relationships</li>
+                <li><strong>Root Node:</strong> The ancestor (top of the tree)</li>
+                <li><strong>Children:</strong> Direct descendants of a person</li>
+                <li><strong>Siblings:</strong> Nodes sharing the same parent</li>
+                <li><strong>Traversal:</strong> Visit all members (DFS/BFS algorithms)</li>
+                <li><strong>Real-world uses:</strong> Genealogy, org charts, file systems, DOM, decision trees</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>Day 5 of #DSAInPublic | <a href="https://github.com/Tyagirohan/build-with-dsa" target="_blank">View on GitHub</a></p>
+        </footer>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    <script src="script.js"></script>
+</body>
+</html>
+
